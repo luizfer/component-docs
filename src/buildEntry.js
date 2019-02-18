@@ -19,12 +19,12 @@ import '${path.resolve(__dirname, './styles/reset.css')}';
 import '${path.resolve(__dirname, './styles/globals.css')}';
 
 ${
-    styles
-      ? styles
-          .map(sheet => `import '${path.resolve(__dirname, sheet)}';`)
-          .join('\n')
-      : ''
-  }
+  styles
+    ? styles
+        .map(sheet => `import '${path.resolve(__dirname, sheet)}';`)
+        .join('\n')
+    : ''
+}
 
 const root = document.getElementById('root');
 const render = () => {

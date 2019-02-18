@@ -15,8 +15,7 @@ type Props = {
 };
 
 const title = css`
-  font-size: 36px;
-  margin: 0 0 8px 0;
+  margin-top: 0;
 `;
 
 const markdown = css`
@@ -29,21 +28,15 @@ const markdown = css`
   }
 `;
 
-const propsHeader = css`
-  font-size: 24px;
-  line-height: 1;
-  color: #000;
-  margin: 48px 0 16px;
-`;
-
 const propInfo = css`
-  margin: 16px 0;
+  margin: 14px 0;
 `;
 
 const propLabel = css`
   display: block;
   color: inherit;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 500;
   margin: 24px 0 8px 0;
   text-decoration: none;
   white-space: nowrap;
@@ -70,7 +63,7 @@ const propItem = css`
 
 const rest = css`
   color: #1976d2;
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 const REACT_STATIC_METHODS = ['getDerivedStateFromProps'];
@@ -277,7 +270,7 @@ export default function Documentation({ name, info, github, filepath }: Props) {
       />
       {keys.length || restProps.length ? (
         <React.Fragment>
-          <h2 className={propsHeader}>Props</h2>
+          <h2>Props</h2>
           {keys.map(prop => (
             <PropTypeDoc key={prop} name={prop} {...info.props[prop]} />
           ))}
@@ -293,7 +286,7 @@ export default function Documentation({ name, info, github, filepath }: Props) {
       ) : null}
       {methods.length ? (
         <React.Fragment>
-          <h2 className={propsHeader}>Methods</h2>
+          <h2>Methods</h2>
           <p>
             These methods can be accessed on the <code>ref</code> of the
             component, e.g.{' '}
@@ -312,7 +305,7 @@ export default function Documentation({ name, info, github, filepath }: Props) {
       ) : null}
       {statics.length ? (
         <React.Fragment>
-          <h2 className={propsHeader}>Static properties</h2>
+          <h2>Static properties</h2>
           <p>
             These properties can be accessed on <code>{name}</code> by using the
             dot notation, e.g.{' '}
